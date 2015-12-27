@@ -37,18 +37,6 @@ run_analysis <- function() {
     select(-activityid) %>%
     group_by(subject, activity) %>%
     summarize_each(funs(mean))
-
-  # Shows number of observations for each subject on each activity
-  #View(summarize(group_data, n=n()))
-  
-  # Summarize each variable in the grouped data with its mean value
-  #View(tidy_data)
-  #write.table(tidy_data, "run_analysis_results.txt", row.names = FALSE)
   
   tidy_data
-}
-
-test <- function() {
-  data <- read.table("run_analysis_results.txt")
-  View(data)
 }
